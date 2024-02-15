@@ -7,4 +7,4 @@ Implementation of Neuro Evolution of Augmenting Topologies (NEAT) in python to t
 ## Helpful links
 
 - NEAT-python: https://neat-python.readthedocs.io/en/latest/
-- Training video: https://youtu.be/PiHM_gqhPYg
+- Training video: https://www.youtube.com/watch?v=PiHM_gqhPYg
