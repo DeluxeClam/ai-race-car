@@ -68,11 +68,14 @@ class TestGame:
 
 
 current_generation = 0 # Generation counter
+winner = None
 
 def run_simulation(genomes, config):
     # Empty Collections For Nets and Cars
     nets = []
     cars = []
+    node_names = {-5:"left", -4:"left-forward", -3:"forward", -2:"right-forward", -1:"right",
+                  0:"turn-left", 1:"turn-right", 2:"decelerate", 3:"accelerate"}
 
     # Initialize PyGame And The Display
     pygame.init()
@@ -165,10 +168,8 @@ def run_simulation(genomes, config):
         if g[1].fitness > genome_fitness:
             genome_fitness = g[1].fitness
             genome_index = i - 1
-
-    node_names = {-5:"left", -4:"left-forward", -3:"forward", -2:"right-forward", -1:"right",
-                  0:"turn-left", 1:"turn-right", 2:"decelerate", 3:"accelerate"}
-    visualize.draw_net(config, genomes[genome_index][1], True, node_names=node_names, fmt='png')
+    winner = genomes[genome_index][1]
+    visualize.draw_net(config, winner, False, node_names=node_names, fmt='png')
     
 
 
